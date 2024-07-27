@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
+    <title>Karan Veer Thakur</title>
+
+</head>
+
+<body>
+    <header class="header-menu">
+        <div class="logo">
+            Karan Veer
+        </div>
+
+        <div class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+
+
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm Karan Veer</h1>
+            <h3 id="role">Web Developer</h3>
+            <p>A frontend focused Web Developer building the Frontend of Websites and Web Applications that lead to the success of the overall product.</p>
+
+
+            <section class="social-media-section">
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/karanveerthakur1122/
+                    " target="_blank" class="social-icon facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://twitter.com/KaranVeerThaku2" target="_blank" class="social-icon twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.instagram.com/karanveerthakur1122" target="_blank" class="social-icon instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/karanveerthakur1122/
+                    " target="_blank" class="social-icon linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </section>
+
+
+        </div>
+
+        <div class="pic">
+            <img src="pic.png" alt="">
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-left">
+                <h1 class="about-title">About Me</h1>
+                <p class="about-description">
+                    I'm Karan Veer Thakur, a software engineer specializing in web development and programming. With a strong foundation in Java, C, HTML, CSS, JavaScript, and React JS, I bring a versatile skill set to every project. My experience as a Technical Coordinator
+                    has honed my abilities in SEO, content writing, and managing web platforms. Passionate about technology and continuous learning, I'm driven to create innovative solutions and make a positive impact in the tech industry.
+                </p>
+            </div>
+            <div class="about-right">
+                <div class="pic">
+                    <img src="aboutpic.png" alt="Karan Veer Thakur">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skill-section" id="skills">
+        <center>
+            <h1 class="about-title">Skills</h1>
+        </center>
+        <div class="container">
+            <div class="skill-box">
+                <span class="title">HTML</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per html">
+                        <span class="tooltip">80%</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <span class="title">CSS</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per css">
+                        <span class="tooltip">70%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">React JS</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per javascript">
+                        <span class="tooltip">60%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">Spring Boot</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per nodejs">
+                        <span class="tooltip">60%</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact</h2>
+                    <p>Karan Veer Thakur</p>
+                    <p>Email: karanveerthakur1122@gmail.com</p>
+                    <p>Phone: +(977)9824842510,<br> +(91)8093687983
+                    </p>
+                </div>
+                <div class="contact-form">
+                    <form action="#">
+                        <div class="form-group">
+                            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email *" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" placeholder="Leave us a message..." required></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <footer class="copyright-section">
+        <p>&copy; 2024 Karan Veer Thakur. All rights reserved.</p>
+    </footer>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const roles = ["Web Developer", "Photographer", "Blogger"];
+        let roleIndex = 0;
+        const roleElement = document.getElementById('role');
+
+        function typeRole(role) {
+            return new Promise(resolve => {
+                roleElement.textContent = '';
+                let i = 0;
+                const typingSpeed = 100;
+
+                function type() {
+                    if (i < role.length) {
+                        roleElement.textContent += role.charAt(i);
+                        i++;
+                        setTimeout(type, typingSpeed);
+                    } else {
+                        setTimeout(resolve, 1000);
+                    }
+                }
+
+                type();
+            });
+        }
+
+        function changeRole() {
+            typeRole(roles[roleIndex])
+                .then(() => {
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    changeRole();
+                });
+        }
+
+        changeRole();
+    });
+</script>
+
+</html>
